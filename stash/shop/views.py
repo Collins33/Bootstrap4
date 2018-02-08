@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .models import Category
+from .models import Category,Ingredient,Confectionery
 
 # Create your views here.
 def welcome(request):
     categories=Category.objects.all()
-    
-    return render(request,"index.html",{"categories":categories})
+    confectioneries=Confectionery.objects.all()
+    return render(request,"index.html",{"categories":categories,"confectioneries":confectioneries})
