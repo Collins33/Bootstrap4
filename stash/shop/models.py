@@ -10,6 +10,10 @@ class Category(models.Model):
     def __str__(self):
         return self.category_name
 
+    #save to the database
+    def saveCategory(self):
+        self.save()    
+
 #ingredient model
 class Ingredient(models.Model):
     ingredient=models.CharField(max_length=30)
