@@ -8,8 +8,21 @@
     <title>Stash</title>
     {%block styles%}
     {% bootstrap_css %}
+    <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nova+Flat" rel="stylesheet">
     {%endblock%}
 </head>
+<style>
+    h1{
+        font-family: 'Rammetto One', cursive;
+    }
+    .searchForm{
+        margin-left: 70%;
+    }
+    .options{
+        font-family: 'Nova Flat', cursive;
+    }
+</style>
 <body>
    <div class="container-fluid">
        {%include 'navbar.html'%}
