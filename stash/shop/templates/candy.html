@@ -1,0 +1,91 @@
+{%load bootstrap3%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{candy.name}}</title>
+
+    {%block styles%}
+    {% bootstrap_css %}
+    <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nova+Flat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    {%endblock%}
+</head>
+<style>
+    h1{
+        font-family: 'Rammetto One', cursive;
+    }
+    p{
+        font-family: 'Rammetto One', cursive;   
+    }
+    .searchForm{
+        margin-left: 70%;
+    }
+    .options{
+        font-family: 'Nova Flat', cursive;
+    }
+    h2{
+        font-family: 'Karla', sans-serif;
+    }
+    h4{
+        font-family: 'Karla', sans-serif;
+    }
+    .myCategory{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    img{
+        display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    }
+    .allCategories{
+        background: #06beb6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #48b1bf, #06beb6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #48b1bf, #06beb6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+</style>
+<body>
+    <div class="container-fluid">
+        {%include 'navbar.html'%}
+        <!-- Area: <br/>{% for ingredient in candy.ingredients.all %}{{ ingredient.ingredient }}<br/>{% endfor %} -->
+        <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <img src="{{candy.first_image.url}}" class="img-responsive img-thumbnail img-rounded" alt="Image" style="height:250px">
+
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                <h1 class="text-center">{{candy.name}}</h1>
+                <h2 class="text-center">KSH:{{candy.price}}</h2>
+
+            </div>
+
+        </div>
+        <div class="row well">
+            <p class="text-center">{{candy.description}}</p>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <img src="{{candy.second_image.url}}" class="img-responsive img-thumbnail img-rounded" alt="Image" style="height:250px">
+
+
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <img src="{{candy.third_image.url}}" class="img-responsive img-thumbnail img-rounded" alt="Image" style="height:250px">
+
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <img src="{{candy.fourth_image.url}}" class="img-responsive img-thumbnail img-rounded" alt="Image" style="height:250px">
+
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
