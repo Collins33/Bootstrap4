@@ -5,7 +5,8 @@ from django.conf.urls.static import static
 
 urlpatterns=[
     url('^$', views.welcome, name="welcome"),
-    url('^all/',views.allSweets,name="allSweets")
+    url('^all/',views.allSweets,name="allSweets"),
+    url('^candy/(\d+)',views.candy,name="candy")
 ]
 
 
