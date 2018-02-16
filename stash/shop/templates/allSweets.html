@@ -1,0 +1,66 @@
+{% load bootstrap3 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SHOP</title>
+    {%block styles%}
+    {% bootstrap_css %}
+    <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nova+Flat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    {%endblock%}
+</head>
+<style>
+
+h1{
+        font-family: 'Rammetto One', cursive;
+    }
+
+.searchForm{
+        margin-left: 70%;
+}   
+</style>
+<body>
+    <div class="container-fluid">
+            {%include 'navbar.html'%}
+        <div class="row">
+            <h1 class="text-center">ALL CONFECTIONERIES</h1>
+        </div>
+        <div class="row">
+            {%for sweet in sweets%}
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <img src="{{sweet.first_image.url}}" class="img-responsive img-thumbnail img-rounded" alt="Image" style="height:250px">
+                    <h1 class="product"> {{ sweet.name}} </h1>
+            </div>
+            {%empty%}
+            <div class="row">
+                <h1 class="text-center">THERE ARE NO CANDIES TODAY</h1>
+
+            </div>
+            
+            {%endfor%}
+
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+    
+
+
+
+{% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %}
+{% endblock %}     
+</body>
+</html>
